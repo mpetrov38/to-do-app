@@ -1,9 +1,9 @@
 import React from "react";
 
-function Sidebar({ children }){
+function Sidebar({children}){
   return (
     <div className="Sidebar">
-      {props.children}
+      {children}
     </div>
   )
 }
