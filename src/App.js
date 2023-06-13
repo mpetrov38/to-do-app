@@ -5,24 +5,25 @@ import User from './components/User/User';
 import AddTodo from './components/AddTodo/AddTodo';
 import Calendar from './components/Calendar/Calendar';
 import Tasks from './components/Tasks/Tasks';
-import Todos from './components/Todos/Todos'; 
+import Todos from './components/Todos/Todos';
 import EditTodo from './components/EditTodo/EditTodo';
 
-function App() {
+
+function App({ children }) {
   return (
-    <div className="App">
-      <Sidebar>
-        <User/>
-        <AddTodo/>
-        <Calendar/>
-        <Tasks/>
-      </Sidebar>
-      <Main>
-        <Todos/>
-        <EditTodo/>
-        
-      </Main>
-    </div>
+      <div className="App">
+        <Sidebar>
+          <User />
+          <AddTodo />
+          <Calendar />
+          <Tasks />
+        </Sidebar>
+        <Main>
+          <Todos />
+          <EditTodo />
+
+        </Main>
+      </div>
   );
 }
 
