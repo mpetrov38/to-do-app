@@ -74,14 +74,14 @@
   transition: all 300ms ease;
 }
 
-.AddTodo form {
+.TodoForm {
   padding: 1rem 1rem calc(1rem + 40px) 1rem;
-  width: 500px;
+  width: 100%;
   background-color: white;
   border-radius: 4px;
 }
 
-.AddTodo form .text input {
+.TodoForm .text input {
   padding: 1rem;
   width: 100%;
   margin-bottom: 0.5rem;
@@ -89,46 +89,46 @@
   font-size: 1.2rem;
 }
 
-.AddTodo form .text input:focus {
+.TodoForm .text input:focus {
   outline: none;
   border-bottom: 1px solid rgb(30, 119, 244);
 }
 
-.AddTodo form .remind {
+.TodoForm .remind {
   display: flex;
   align-items: center;
   padding: 0.5rem;
 }
 
-.AddTodo form p {
+.TodoForm p {
   margin-left: 10px;
 }
 
-.AddTodo form .title {
+.TodoForm .title {
   display: flex;
   align-items: center;
   margin-bottom: 5px;
 }
 
-.AddTodo form .pickDay {
+.TodoForm .pickDay {
   padding: 1.5rem 1.5rem 0 1.5rem;
 }
 
-.AddTodo form .pickTime {
+.TodoForm .pickTime {
   padding: 1.5rem;
 }
 
-.AddTodo form .pickTask {
+.TodoForm .pickTask {
   padding: 0.5rem;
 }
 
-.AddTodo form .pickTask .tasks {
+.TodoForm .pickTask .tasks {
   display: flex;
   flex-wrap: wrap;
   padding: 1rem 1rem 0 1rem;
 }
 
-.AddTodo form .pickTask .tasks .task {
+.TodoForm .pickTask .tasks .task {
   border: 1px solid rgb(30, 119, 244);
   border-radius: 5px;
   padding: 5px;
@@ -136,26 +136,26 @@
   cursor: pointer;
 }
 
-.AddTodo form .pickTask .tasks .active {
+.TodoForm .pickTask .tasks .active {
   background-color: rgb(30, 119, 244);
   color: white;
 }
 
-.AddTodo form .close {
+.TodoForm .close {
   position: absolute;
   top: 0;
   right: 5px;
   cursor: pointer;
 }
 
-.AddTodo form .confirm {
+.TodoForm .confirm {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
 }
 
-.AddTodo form .confirm button {
+.TodoForm.confirm button {
   height: 40px;
   background-color: rgb(30, 119, 244);
   width: 100%;
@@ -174,6 +174,7 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
+  z-index: 99;
 }
 
 .modalWrapper {
@@ -394,7 +395,7 @@
 }
 
 .TaskForm button:hover {
-  filter: brightness(1.1);
+  filter: brightness(1);
 }
 
 .Todos {
@@ -405,7 +406,7 @@
   bottom: 40px;
   left: 40px;
   border-radius: 4px;
-  opacity: 1;
+  opacity: 0.9;
   padding: 0 0.5rem 0.5rem 0.5rem;
 }
 
@@ -415,15 +416,22 @@
   font-size: 1.5rem;
   font-weight: bold;
   padding-bottom: 2px;
-  border-bottom: 1px solid #eeee;
+  border-bottom: 1px solid #eeeeee;
 }
 
 .Todos .todos {
   overflow-y: auto;
 }
-.Todo .todoContainer .text{
+
+.Todo .todoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.Todo .todoContainer .text {
   position: relative;
 }
+
 .Todo .todoContainer .text .cherta {
   height: 1px;
   background-color: gray;
@@ -432,6 +440,25 @@
   width: 0;
   transition: width 300ms ease-in-out;
 }
+
 .Todo .todoContainer .text .zacherkni {
   width: 100%;
+}
+
+.EditTodo {
+  position: absolute;
+  bottom: 40px;
+  left: 540px;
+  background-color: white;
+  height: 80%;
+  width: 450px;
+  border-radius: 4px;
+  opacity: 0.9;
+}
+.EditTodo .header{
+  margin: 1rem 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #eeeeee;
 }

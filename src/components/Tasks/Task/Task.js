@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { XCircle, Pencil } from "react-bootstrap-icons";
 import Modal from "../../Modal/Modal"
 import RenameTask from "../RenameTask/RenameTask";
+import { TodoContext } from "../../../contexts";
 
 function Task({ task, edit }) {
+    const {setSelectedTask} = useContext(TodoContext);
+
     let [showModal, setShowModal] = useState(false);
 
     return (
         <div className='Task'>
-            <div className="name">
+            <div className="name"
+                 onClick={() => setSelectedTask(task.name)}
+            >
                 {task.name}
             </div>
             <div className="btns">

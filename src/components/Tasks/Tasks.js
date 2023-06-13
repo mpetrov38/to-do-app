@@ -1,18 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { CaretUp, ListTask, PencilFill } from 'react-bootstrap-icons';
 import Task from "./Task/Task";
 import AddTask from "./AddTask/AddTask"
+import { TodoContext } from "../../contexts";
 
 function Tasks() {
   let [showMenu, setShowMenu] = useState(true);
   let [edit, setEdit] = useState(false);
   let penColor = edit ? "green" : "black";
-  const tasks = [
-    { id: 1, name: "personal", numOfTodos: 0 },
-    { id: 2, name: "work", numOfTodos: 1 },
-    { id: 3, name: "other", numOfTodos: 2 },
-  ];
-
+  
+  let {tasks} = useContext(TodoContext);
 
   return (
     <div className='Tasks'>
